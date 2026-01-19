@@ -1,0 +1,133 @@
+---
+title: Getting Started with Deepika Nallana
+description: Learn how to set up your account and create your first documentation space quickly.
+---
+
+## Prerequisites
+
+Before you begin, ensure you have the following:
+
+<Callout kind="info">
+
+- A modern web browser (Chrome, Firefox, or Safari)
+- An email address for account verification
+- Optional: GitHub account for importing repositories
+
+</Callout>
+
+## Sign Up for an Account
+
+Create your Deepika Nallana account in under 2 minutes.
+
+<Steps>
+  <Step title="Visit the Dashboard" icon="monitor">
+    Navigate to `https://dashboard.example.com` and click **Sign Up**.
+  </Step>
+  <Step title="Enter Your Details" icon="user">
+    Provide your email, name, and a strong password. Accept the terms of service.
+  </Step>
+  <Step title="Verify Email" icon="mail">
+    Check your inbox for a verification link from Deepika Nallana and click it to activate your account.
+  </Step>
+  <Step title="Log In" icon="log-in">
+    Return to the dashboard and sign in with your credentials.
+  </Step>
+</Steps>
+
+## Set Up Your Initial Workspace
+
+After logging in, configure your default workspace.
+
+<Steps>
+  <Step title="Create Workspace" icon="settings">
+    Click **New Workspace** on the dashboard. Name it `My Project Docs`.
+  </Step>
+  <Step title="Set Brand Color" icon="palette">
+    Customize your workspace with brand color `#3B82F6`. Save changes.
+  </Step>
+  <Step title="Invite Team Members" icon="users">
+    Add collaborators by entering their emails. They receive an invite link.
+  </Step>
+</Steps>
+
+## Create Your First Project
+
+Build your first documentation project quickly.
+
+<Tabs>
+  <Tab title="From Scratch" icon="plus">
+    <Steps>
+      <Step title="New Project" icon="file-plus">
+        In your workspace, select **New Project** > **Blank Project**.
+      </Step>
+      <Step title="Add Pages" icon="book-open">
+        Create pages like `introduction.mdx` and `quickstart.mdx`.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="From Template" icon="layout">
+    Choose a template such as **API Docs** or **Product Guide**. Pre-built pages populate automatically.
+  </Tab>
+</Tabs>
+
+## Import Existing Documents
+
+Bring in your current docs seamlessly.
+
+<CodeGroup tabs="GitHub,Google Drive,API">
+  ```bash
+  # GitHub Repo Import (via CLI)
+  npx deepika-import --repo https://github.com/user/my-docs --workspace My Project Docs --token YOUR_TOKEN
+  ```
+  ```bash
+  # Google Drive (via UI)
+  # 1. Go to Import > Google Drive
+  # 2. Authenticate and select folder
+  # 3. Maps .md files to pages automatically
+  ```
+  ```javascript
+  // API Import Example
+  const response = await fetch('https://api.example.com/v1/workspaces/{workspaceId}/import', {
+    method: 'POST',
+    headers: {
+      'Authorization': 'Bearer YOUR_API_KEY',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      source: 'github',
+      repo: 'user/my-docs',
+      branch: 'main'
+    })
+  });
+  ```
+</CodeGroup>
+
+<ParamField path="workspaceId" param-type="string" required="true">
+  Your workspace identifier from the dashboard URL.
+</ParamField>
+
+<ParamField header="Authorization" param-type="string" required="true">
+  Bearer token obtained from account settings.
+</ParamField>
+
+## Next Steps
+
+Explore more features to enhance your documentation.
+
+<Columns cols={3}>
+  <Card title="Authentication" icon="lock" href="/authentication">
+    Secure your API integrations.
+  </Card>
+  <Card title="Advanced Configuration" icon="settings" href="/configuration">
+    Customize workflows and permissions.
+  </Card>
+  <Card title="Changelog" icon="git-branch" href="/changelog">
+    Stay updated with latest releases.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+
+Ready to dive deeper? Check the [Introduction](/introduction) for core concepts.
+
+</Callout>

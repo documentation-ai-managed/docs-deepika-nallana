@@ -1,0 +1,156 @@
+---
+title: Changelog
+description: Track the evolution of Deepika Nallana with detailed version history and updates.
+---
+
+## Latest Updates
+
+Deepika Nallana evolves rapidly to help you manage project documentation more effectively. Review the most recent releases below, ordered newest first. Each version includes new features, improvements, and bug fixes.
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Added real-time collaboration for shared documents, allowing multiple users to edit simultaneously.
+- Introduced version history with diff views so you can compare changes easily.
+- New export options including PDF and Markdown bundles for offline access.
+
+## Improvements
+
+- Enhanced search with fuzzy matching and full-text indexing for faster results.
+- Optimized performance for large documentation spaces, reducing load times by 40%.
+
+## Bug Fixes
+
+- Fixed sync issues when editing on mobile devices.
+- Resolved authentication errors during webhook integrations.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Integrated AI-powered content suggestions to help you draft documentation faster.
+- Added custom themes and branding options using your brand color `#3B82F6`.
+
+## Improvements
+
+- Streamlined the project organization with nested folders and tagging system.
+- Better keyboard shortcuts for power users, including `Ctrl+K` for quick search.
+
+## Bug Fixes
+
+- Corrected rendering glitches in Mermaid diagrams.
+- Patched security vulnerability in file upload handling.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Core documentation space creation with unlimited pages and projects.
+- Full Markdown and MDX support including custom components.
+- API access for programmatic documentation management via `https://api.example.com`.
+
+## Breaking Changes
+
+- Updated authentication to use JWT tokens instead of session cookies.
+
+</Update>
+
+<Callout kind="info">
+
+Subscribe to our newsletter or watch the GitHub repository to stay informed about new releases. You receive automatic upgrade notifications in your dashboard at `https://dashboard.example.com`.
+
+</Callout>
+
+## Upgrade Guide
+
+Upgrading Deepika Nallana ensures you benefit from the latest features and security patches. Follow these steps for a smooth transition.
+
+<Steps>
+  <Step title="Backup Your Data" icon="database">
+
+    Export your documentation space.
+
+````bash
+curl -H "Authorization: Bearer YOUR_TOKEN" \
+  https://api.example.com/v1/export?spaceId=YOUR_SPACE_ID \
+  -o backup.zip
+````
+
+  </Step>
+  <Step title="Update Client SDK" icon="download">
+
+    <Tabs>
+      <Tab title="npm" icon="package">
+````bash
+npm update @deepika/sdk@latest
+````
+      </Tab>
+      <Tab title="yarn" icon="package">
+````bash
+yarn upgrade @deepika/sdk@latest
+````
+      </Tab>
+    </Tabs>
+
+  </Step>
+  <Step title="Run Migrations" icon="settings">
+
+    Execute the migration script.
+
+````javascript
+// migration.js
+const sdk = require('@deepika/sdk');
+await sdk.migrate({ version: '1.2.0', spaceId: 'YOUR_SPACE_ID' });
+console.log('Migration complete.');
+````
+
+  </Step>
+  <Step title="Verify" icon="check-circle">
+
+    Test key features in your dashboard.
+
+  </Step>
+</Steps>
+
+## Roadmap
+
+Explore upcoming enhancements planned for Deepika Nallana. These teasers give you a glimpse into future capabilities.
+
+<Columns cols={3}>
+  <Card title="Q4 2024" icon="zap" href="#">
+
+    Advanced analytics for documentation usage.
+
+  </Card>
+  <Card title="Q1 2025" icon="trending-up" href="#">
+
+    Native mobile app with offline editing.
+
+  </Card>
+  <Card title="Q2 2025" icon="globe" href="#">
+
+    Multi-language support and localization.
+
+  </Card>
+</Columns>
+
+<Expandable title="Full Version Archive" default-open="false">
+
+Access older changelogs via the API:
+
+<CodeGroup tabs="JavaScript,Python">
+```javascript
+const changes = await fetch('https://api.example.com/v1/changelog?limit=50');
+```
+```python
+import requests
+response = requests.get('https://api.example.com/v1/changelog?limit=50')
+```
+</CodeGroup>
+
+</Expandable>
